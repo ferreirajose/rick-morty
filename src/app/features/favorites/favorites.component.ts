@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FavoriteService } from './favorites.service';
+import { Character } from '@shared/types/character';
 
 @Component({
   selector: 'app-favorites',
@@ -8,7 +9,7 @@ import { FavoriteService } from './favorites.service';
   styleUrls: ['./favorites.component.scss']
 })
 export class FavoritesComponent implements OnInit {
-  favoriteCharacters: any[] = [];
+  favoriteCharacters: Character[] = [];
 
   constructor(private http: HttpClient, private favoriteService: FavoriteService) {}
 
@@ -20,14 +21,14 @@ export class FavoritesComponent implements OnInit {
     const favoriteIds = this.favoriteService.getFavorites();
     if (favoriteIds.length > 0) {
       favoriteIds.forEach(id => {
-        this.http.get<any>(`https://rickandmortyapi.com/api/character/${id}`).subscribe(character => {
+        this.http.get<Character>(`https://rickandmortyapi.com/api/character/${id}`).subscribe(character => {
           this.favoriteCharacters.push(character);
         });
       });
     }
   }
 
-  toggleFavorite(character: any): void {
+  toggleFavorite(character: Character): void {
     this.favoriteService.removeFavorite(character.id);
     this.favoriteCharacters = this.favoriteCharacters.filter(c => c.id !== character.id);
   }

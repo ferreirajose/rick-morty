@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FavoriteNotificationService } from '@shared/favaroti-notification.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,17 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
+  favoriteCount = 0;
+
+  ngOnInit(): void {
+    this.favoriteNotificationService.favoriteCount$.subscribe(count => {
+      this.favoriteCount = count;
+    });
+  }
+
   constructor(
-    private router: Router
+    private router: Router,
+    private favoriteNotificationService: FavoriteNotificationService
   ) {}
 
   redirect(page: string): void {
