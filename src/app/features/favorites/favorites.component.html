@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="section-title">Favoritos</h1>
+</div>
+
+<div *ngIf="favoriteCharacters.length === 0" class="no-items text-center p-5">
+  <div class="no-items-box">
+    <p class="mb-0">Nada foi encontrado</p>
+    <p>Tente realizar uma nova busca.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div *ngFor="let character of favoriteCharacters" class="col-md-4 mb-4">
+    <div class="card">
+      <img [src]="character.image" class="card-img-top" [alt]="character.name">
+      <div class="card-body">
+        <h5 class="card-title">{{ character.name }}</h5>
+        <p class="card-subtitle">{{ character.species }}</p>
+        <i class="bi bi-heart favorite-icon favorited"
+           (click)="toggleFavorite(character)"></i>
+      </div>
+    </div>
+  </div>
+</div>
