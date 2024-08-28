@@ -9,11 +9,6 @@
   -webkit-text-stroke: 2px rgba(178, 223, 40, 1);
 }
 
-// .form-control{
-//   border: 1px solid #1F1F1F;
-//   background: transparent;
-// }
-
 .no-items {
   .no-items-box {
     width: 720px;
@@ -79,4 +74,59 @@
       color: #000;
     }
   }
+}
+
+.floating-label {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.floating-input, .floating-select {
+  font-size: 14pt;
+  display: block;
+  padding-left: 15px;
+  width: 100%;
+  height: 61px;
+  background-color:transparent;
+  border: 1px solid #363636;
+  color: #F2F2F2;
+  border-radius: 10px;
+  outline: none;
+}
+
+.floating-input:focus, .floating-select:focus {
+  border: 1px solid #363636;
+}
+
+.floating-label label {
+  color: #F2F2F2;
+  font-size: 14pt;
+  font-weight: 400;
+  position: absolute;
+  pointer-events: none;
+  left: 15px;
+  top: 18px;
+  transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
+  -webkit-transition: 0.3s ease all;
+  -ms-transition: 0.3s ease all;
+  -o-transition: 0.3s ease all;
+}
+
+.floating-input:focus ~ label, .floating-input:not(:placeholder-shown) ~ label {
+  top: 15%;
+  transform: translate3d(0, -100%, 0);
+  font-size: 10.5pt;
+  color: #363636;
+  padding: 3px;
+  opacity: 1;
+  background:#1F1F1F;
+}
+
+.floating-select:focus ~ label, .floating-select:not([value=""]):valid ~ label {
+  top: 0px;
+  font-size: 10.5px;
+  color: #363636;
+  padding: 3px;
+  opacity: 0.7;
 }

@@ -1,9 +1,15 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
   <h1 class="section-title">Início</h1>
-  <div class="form-floating">
+  <!-- <div class="form-floating">
     <input type="text" class="form-control" id="searchInput" placeholder="Pesquisar" [formControl]="searchControl">
     <label for="searchInput">Pesquisar</label>
-  </div>
+  </div> -->
+
+  <div class="floating-label" style="margin-top: 20px">
+    <input type="text" class="floating-input" id="searchInput" placeholder="" [formControl]="searchControl">
+    <label>Pesquisar</label>
+    <span class="highlight"></span>
+</div>
 </div>
 
 <div *ngIf="characters.length === 0" class="no-items text-center p-5">
