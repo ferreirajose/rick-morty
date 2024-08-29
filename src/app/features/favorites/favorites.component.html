@@ -1,12 +1,12 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
-  <h1 class="section-title">Favoritos</h1>
+  <h1 class="section-title">{{'FAVORITE.TITLE' | translate }}</h1>
 </div>
 
 <div *ngIf="favoriteCharacters.length === 0" class="no-items text-center p-5">
   <div class="no-items-box">
     <p class="mb-0 title">Parece que você ainda não tem favoritos</p>
     <p class="subtitle">Volte à página inicial e escolha os melhores para você.</p>
-    <a [routerLink]="'/'" class="btn btn-light" tabindex="-1" role="button" aria-disabled="true">Voltar ao início</a>
+    <a [routerLink]="'/'" class="btn btn-light" tabindex="-1" role="button" aria-disabled="true">{{'SECTION.BUTTONVOLTAR' | translate }}</a>
   </div>
 </div>
 

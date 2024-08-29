@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { FavoriteNotificationService } from '@shared/favaroti-notification.service';
 import { Observable, startWith } from 'rxjs';
 
@@ -14,7 +15,16 @@ export class AppComponent {
   );
 
   constructor(
+    public translate: TranslateService,
     private favoriteNotificationService: FavoriteNotificationService
-  ) {}
+  ) {
+    translate.addLangs(['en', 'es', 'pt_br']);
+    translate.setDefaultLang('pt_br');
+
+  }
+
+  changeLang(lang: string) {
+    this.translate.setDefaultLang(lang);
+  }
 
 }
