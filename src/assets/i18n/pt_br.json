@@ -1,9 +1,18 @@
 {
+  "HEADER": {
+    "BR": "Bandeira do Brasil",
+    "US": "Bandeira dos Estados Unidos da America",
+    "ES": "Bandeira da Espanha"
+  },
   "HOME": {
-    "TITLE": "Início"
+    "TITLE": "Início",
+    "TRYAGAIN":"Tente realizar uma nova busca",
+    "NOTFOUND": "Nada foi encontrado"
   },
   "FAVORITE": {
-    "TITLE": "Favorites"
+    "TITLE": "Favorites",
+    "TITLE_SECTION": "Parece que você ainda não tem favoritos",
+    "SUB_TITLE_SECTION": "Volte à página inicial e escolha os melhores para você."
   },
   "SECTION": {
     "PESQUISAR": "Pesquisar",

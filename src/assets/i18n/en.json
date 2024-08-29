@@ -1,9 +1,18 @@
 {
+  "HEADER": {
+  "BR": "Flag of Brazil",
+  "US": "Flag of the United States of America",
+  "ES": "Flag of Spain"
+  },
   "HOME": {
-    "TITLE": "Home"
+    "TITLE": "Home",
+    "TRYAGAIN":"Try performing a new search",
+    "NOTFOUND": "Nothing found"
   },
   "FAVORITE": {
-    "TITLE": "Favorites"
+    "TITLE": "Favorites",
+    "TITLE_SECTION": "It looks like you don't have any favorites yet.",
+    "SUB_TITLE_SECTION": "Go back to the home page and choose the best ones for you."
   },
   "SECTION": {
     "PESQUISAR": "Research",

@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from '@shared/shared.module';
 
 import { HttpClient } from '@angular/common/http';
+import { PageNotFoundComponent } from '@shared/components/page-not-found/page-not-found.component';
 
 registerLocaleData(localePt);
 
@@ -24,7 +25,8 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

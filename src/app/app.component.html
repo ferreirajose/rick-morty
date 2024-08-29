@@ -3,10 +3,26 @@
     <img src="assets/logo.png" width="114" height="64" alt="Logo Rick and Morty"  />
   </div>
   <ul class="translate">
-    <li class="item" (click)="changeLang('pt_br')"><img src="../assets/brazil.png" width="32" alt=""></li>
-    <li class="item" (click)="changeLang('en')"><img src="../assets/united-states.png" width="32" alt=""></li>
-    <li class="item" (click)="changeLang('es')"><img src="../assets/spain.png" width="32" alt=""></li>
+    <li
+      class="item"
+      [class.focus]="isLangSelected('pt_br')"
+      (click)="changeLang('pt_br')">
+      <img src="../assets/brazil.png" width="32" [alt]="'HEADER.BR' | translate" />
+    </li>
+    <li
+      class="item"
+      [class.focus]="isLangSelected('en')"
+      (click)="changeLang('en')">
+      <img src="../assets/united-states.png" width="32" [alt]="'HEADER.US' | translate" />
+    </li>
+    <li
+      class="item"
+      [class.focus]="isLangSelected('es')"
+      (click)="changeLang('es')">
+      <img src="../assets/spain.png" width="32" [alt]="'HEADER.ES' | translate" />
+    </li>
   </ul>
+
   <div class="header-options d-flex">
     <div class="option d-flex align-items-center no-border-home" [routerLink]="['/home']"  [routerLinkActive]="['active']" >
       <i class="bi bi-house"></i>
