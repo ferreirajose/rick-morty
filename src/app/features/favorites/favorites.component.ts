@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FavoriteService } from './favorites.service';
 import { Character } from '@shared/types/character';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-favorites',
@@ -11,7 +12,11 @@ import { Character } from '@shared/types/character';
 export class FavoritesComponent implements OnInit {
   favoriteCharacters: Character[] = [];
 
-  constructor(private http: HttpClient, private favoriteService: FavoriteService) {}
+  constructor(
+    private http: HttpClient,
+    private favoriteService: FavoriteService,
+    public translate: TranslateService
+  ) {}
 
   ngOnInit(): void {
     this.loadFavoriteCharacters();

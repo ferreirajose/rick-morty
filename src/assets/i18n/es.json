@@ -1,0 +1,14 @@
+{
+  "HOME": {
+    "TITLE": "Comenzar",
+    "FAVORITE": "Favoritos"
+  },
+  "FAVORITE": {
+    "TITLE": "Favoritos"
+  },
+  "SECTION": {
+    "PESQUISAR": "Buscar",
+    "TITLE": "Comenzar",
+    "BUTTONVOLTAR": "Volver arriba"
+  }
+}

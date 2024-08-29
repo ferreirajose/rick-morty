@@ -4,6 +4,7 @@ import { debounceTime, distinctUntilChanged, switchMap, filter } from 'rxjs/oper
 import { FavoriteService } from '../favorites/favorites.service';
 import { Character } from '@shared/types/character';
 import { HomeService } from './home.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -16,8 +17,10 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private characterService: HomeService,
-    private favoriteService: FavoriteService
-  ) {}
+    private favoriteService: FavoriteService,
+    public translate: TranslateService
+  ) {
+  }
 
   ngOnInit(): void {
     this.loadMoreCharacters();
