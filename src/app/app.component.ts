@@ -10,6 +10,7 @@ import { Observable, startWith } from 'rxjs';
 })
 export class AppComponent {
 
+  currentLang = 'pt_br';
   favoriteCount$: Observable<number> = this.favoriteNotificationService.favoriteCount$.pipe(
     startWith(0)
   );
@@ -19,12 +20,15 @@ export class AppComponent {
     private favoriteNotificationService: FavoriteNotificationService
   ) {
     translate.addLangs(['en', 'es', 'pt_br']);
-    translate.setDefaultLang('pt_br');
-
+    translate.setDefaultLang(this.currentLang);
   }
 
-  changeLang(lang: string) {
+  changeLang(lang: string): void {
     this.translate.setDefaultLang(lang);
+    this.currentLang = lang;
   }
 
+  isLangSelected(lang: string): boolean {
+    return this.currentLang === lang;
+  }
 }

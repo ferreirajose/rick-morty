@@ -23,7 +23,7 @@ export type Result = {
   image:    string;
   episode:  string[];
   url:      string;
-  created:  Date;
+  created:  Date | string;
 }
 
 export type Location = {

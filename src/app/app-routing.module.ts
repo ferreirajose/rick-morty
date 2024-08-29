@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Route } from '@angular/router';
-//import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from '@shared/components/page-not-found/page-not-found.component';
 
 const routes: Route[] = [
   {
@@ -13,7 +13,7 @@ const routes: Route[] = [
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 
-  // {path:'**', component: PageNotFoundComponent}
+  {path:'**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
