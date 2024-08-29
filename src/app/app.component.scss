@@ -28,6 +28,17 @@ header {
       }
     }
 
+    .no-border-home{
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      border-right: 2px solid #3D3D3D;
+    }
+
+    .no-border-favorites{
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
     .notification{
       width: 20px;
       height: 20px;
@@ -43,6 +54,12 @@ header {
 
     }
   }
+
+  .active {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+
 }
 
 // .section-title{
