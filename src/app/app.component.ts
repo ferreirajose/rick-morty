@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 import { FavoriteNotificationService } from '@shared/favaroti-notification.service';
+import { Observable, startWith } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,21 +9,12 @@ import { FavoriteNotificationService } from '@shared/favaroti-notification.servi
 })
 export class AppComponent {
 
-  favoriteCount = 0;
-
-  ngOnInit(): void {
-    this.favoriteNotificationService.favoriteCount$.subscribe(count => {
-      this.favoriteCount = count;
-    });
-  }
+  favoriteCount$: Observable<number> = this.favoriteNotificationService.favoriteCount$.pipe(
+    startWith(0)
+  );
 
   constructor(
-    private router: Router,
     private favoriteNotificationService: FavoriteNotificationService
   ) {}
-
-  redirect(page: string): void {
-    this.router.navigate([page]);
-  }
 
 }

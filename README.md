@@ -1,27 +1,66 @@
-# RickMorty
+  # Running an Angular Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+  This README.md guide provides instructions on how to run an Angular project from scratch. Whether you're starting a new project or collaborating with others, these steps will help you set up and run the Angular project seamlessly.
 
-## Development server
+  ## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+  Before you begin, ensure you have the following installed:
 
-## Code scaffolding
+  - Node.js: Angular requires Node.js to be installed. You can download and install it from [Node.js website](https://nodejs.org/).
+  - npm (Node Package Manager): npm usually comes with Node.js installation.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  ## Installation
 
-## Build
+  1. **Install Angular CLI**:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    Angular CLI (Command Line Interface) is a powerful tool that simplifies the process of creating and managing Angular projects.
 
-## Running unit tests
+    Open your terminal or command prompt and run the following command to install Angular CLI globally:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    ```
+    npm install -g @angular/cli
+      ```
 
-## Running end-to-end tests
+  2. **Install Dependencies**:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    ```
+    npm install
+      ```
 
-## Further help
+  3. **Clone the Angular project repository:**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+      ```
+      git clone https://github.com/ferreirajose/rick-morty.git
+      ```
+
+  ## Running the Project
+
+  1. **Start the development server:**
+
+      ```
+      npm run start:dev
+      ```
+
+  2. **Accessing the project in the browser:**
+
+      ```
+      http://localhost:4200/
+      ```
+
+  3. **Run unit tests:**
+      
+      ```
+      npm run test
+      ```
+  4. **Build the project:**
+      ```
+      ng build --prod
+      ```
+
+  ## Problems with installing dependencies
+
+    try downloading using the command below
+    
+    ```
+    npm i --legacy-peer-deps
+    ```

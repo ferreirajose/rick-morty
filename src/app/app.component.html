@@ -3,14 +3,16 @@
     <img src="assets/logo.png" width="114" height="64" alt="Logo Rick and Morty"  />
   </div>
   <div class="header-options d-flex">
-    <div class="option d-flex align-items-center" (click)="redirect('home')">
+    <div class="option d-flex align-items-center no-border-home" [routerLink]="['/home']"  [routerLinkActive]="['active']" >
       <i class="bi bi-house"></i>
       <span class="option-title">Início</span>
     </div>
-    <div class="option d-flex align-items-center" (click)="redirect('favorites')">
+    <div class="option d-flex align-items-center no-border-favorites" [routerLink]="['/favorites']"  [routerLinkActive]="['active']">
       <i class="bi bi-heart"></i>
       <span class="option-title">Favoritos</span>
-      <span class="notification">{{ favoriteCount }}</span>
+      <ng-container *ngIf="(favoriteCount$ | async) !== null">
+        <span class="notification">{{ favoriteCount$ | async }}</span>
+      </ng-container>
     </div>
   </div>
 </header>
