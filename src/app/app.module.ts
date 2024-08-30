@@ -1,5 +1,5 @@
 import { registerLocaleData } from '@angular/common';
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule, isDevMode } from '@angular/core';
 
 import localePt from '@angular/common/locales/pt';
 
@@ -16,6 +16,7 @@ import { SharedModule } from '@shared/shared.module';
 
 import { HttpClient } from '@angular/common/http';
 import { PageNotFoundComponent } from '@shared/components/page-not-found/page-not-found.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 registerLocaleData(localePt);
 
@@ -41,6 +42,12 @@ export function createTranslateLoader(http: HttpClient) {
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
       }
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
     })
   ],
   providers: [

@@ -6,6 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "clear": "rm -rf dist/rick-morty",
+    "serve": "http-server -p 8080 -c-1 dist/rick-morty/",
     "test": "ng test"
   },
   "private": true,
@@ -17,7 +19,9 @@
     "@angular/forms": "^16.2.0",
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
+    "@angular/pwa": "^16.2.15",
     "@angular/router": "^16.2.0",
+    "@angular/service-worker": "^16.2.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "bootstrap": "^5.2.1",
