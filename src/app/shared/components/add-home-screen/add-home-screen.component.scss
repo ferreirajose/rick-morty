@@ -1,0 +1,97 @@
+.app-download-base {
+  position: fixed;
+  z-index: 9999999999;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s all linear;
+  width: 90%;
+  max-width: 430px;
+}
+
+.app-download-base.show-component {
+  bottom: 2rem;
+  opacity: 1;
+  visibility: visible;
+}
+
+.app-download-base .div-content {
+  z-index: 100;
+  position: relative;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.app-download-base .div-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 13px;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.app-download-base .bg:before {
+  content: '';
+  position: fixed;
+  left: -400%;
+  width: 1000%;
+  bottom: 0;
+  z-index: 90;
+  box-shadow: 0px 10px 84px 70px rgba(0, 0, 0, 0.65);
+}
+
+.app-download-base a.btn,
+.app-download-base a.btn-large,
+.app-download-base a.btn-small {
+  height: 50px;
+}
+
+@media (min-width: 768px) {
+  .app-download-base {
+    max-width: 540px;
+  }
+
+  .app-download-base .bg:before {
+    box-shadow: 0px 0px 100px 40px rgba(0, 0, 0, 0.65);
+  }
+}
+
+#btn-fechar {
+  align-self: start;
+}
+
+.center-geral {
+  width: 100%;
+  text-align: center;
+}
+
+.to-close{
+  width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#wrapper-install {
+  background: #2d70aa;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  align-self: end;
+}
+
+#add-ios {
+  border-top: 1px solid #eee;
+  margin: 10px 0;
+  padding-top: 10px;
+}
+
+#add-ios img {
+  margin: auto;
+}

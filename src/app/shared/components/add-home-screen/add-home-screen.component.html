@@ -1,0 +1,25 @@
+<div class="app-download-base show-component" id="install-app" *ngIf="modalPwaPlatform === 'IOS' || modalPwaPlatform === 'ANDROID'">
+  <main class="div-content">
+    <div class="div-wrapper">
+      <section>
+        <button id="btn-fechar" class="btn-close" aria-label="Close" (click)="closePwa()">
+        </button>
+      </section>
+      <section class="center-geral">
+        <div class="to-close">
+          <img src="assets/images/logo.png" alt="Logo de Rick and Morty" />
+        </div>
+      </section>
+      <div id="wrapper-install" *ngIf="modalPwaPlatform === 'ANDROID'" role="button" aria-label="Baixar APP" (click)="addToHomeScreen()">
+        <span>Baixar APP</span>
+      </div>
+    </div>
+    <section id="add-ios" *ngIf="modalPwaPlatform === 'IOS'">
+      <p>Para instalar este aplicativo WEB em seu dispositivo, toque no botão "Menu"
+        e depois no botão "Adicionar à tela inicial"</p>
+      <div class="text-center">
+        <img width="40" src="assets/images/safari_action_button_38x50.png" class="ios-menu" alt="Menu do Safari" />
+      </div>
+    </section>
+  </main>
+</div>
