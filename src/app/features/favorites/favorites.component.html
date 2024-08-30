@@ -2,7 +2,7 @@
   <h1 class="section-title">{{'FAVORITE.TITLE' | translate }}</h1>
 </div>
 
-<div *ngIf="favoriteCharacters.length === 0" class="no-items text-center p-5">
+<div *ngIf="favoriteCharacters.length === 0" class="no-items text-center p-4">
   <div class="no-items-box">
     <p class="mb-0 title">{{'FAVORITE.TITLE_SECTION' | translate }}</p>
     <p class="subtitle">{{'FAVORITE.SUB_TITLE_SECTION' | translate }}</p>
@@ -11,14 +11,13 @@
 </div>
 
 <div class="row">
-  <div *ngFor="let character of favoriteCharacters" class="col-md-4 mb-4">
+  <div *ngFor="let character of favoriteCharacters" class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
     <div class="card">
       <img [src]="character.image" class="card-img-top" [alt]="character.name">
       <div class="card-body">
         <h5 class="card-title">{{ character.name }}</h5>
         <p class="card-subtitle">{{ character.species }}</p>
-        <i class="bi bi-heart favorite-icon favorited"
-           (click)="toggleFavorite(character)"></i>
+        <i class="bi bi-heart favorite-icon favorited" (click)="toggleFavorite(character)"></i>
       </div>
     </div>
   </div>

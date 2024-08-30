@@ -1,13 +1,20 @@
 header {
   background-color: #000;
 
-  .logo img {
-    max-width: 150px;
+  .logo {
+    cursor: pointer;
+    img {
+      max-width: 150px;
+    }
   }
 
   .header-options {
-    border:2px solid #3D3D3D;
+    border: 2px solid #3D3D3D;
     border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
     .option {
       border-radius: 8px;
       background-color: #000;
@@ -25,20 +32,24 @@ header {
       &-title {
         font-size: 1rem;
       }
+
+      @media (min-width: 768px) {
+        margin-bottom: 0;
+      }
     }
 
-    .no-border-home{
+    .no-border-home {
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
       border-right: 2px solid #3D3D3D;
     }
 
-    .no-border-favorites{
+    .no-border-favorites {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
 
-    .notification{
+    .notification {
       width: 20px;
       height: 20px;
       border-radius: 50%;
@@ -50,7 +61,6 @@ header {
       font-weight: 700;
       line-height: 19.6px;
       text-align: center;
-
     }
   }
 
@@ -58,21 +68,25 @@ header {
     background-color: #fff !important;
     color: #000 !important;
   }
-
 }
 
-.translate{
+.translate {
   display: flex;
-    flex-direction: row;
-    gap: 10px;
+  flex-direction: row;
+  gap: 10px;
 
-    .item {
-      list-style: none;
-      cursor: pointer;
-      opacity: 0.2;
-    }
+  .item {
+    list-style: none;
+    cursor: pointer;
+    opacity: 0.2;
 
-    .focus {
-      opacity: 1;
+    @media (max-width: 576px) {
+      width: 24px;
+      height: 24px;
     }
+  }
+
+  .focus {
+    opacity: 1;
+  }
 }

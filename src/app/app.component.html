@@ -1,8 +1,8 @@
-<header class="d-flex justify-content-between align-items-center p-3">
-  <div class="logo">
-    <img src="assets/logo.png" width="114" height="64" alt="Logo Rick and Morty"  />
+<header class="d-flex flex-column flex-md-row justify-content-between align-items-center p-3">
+  <div class="logo mb-3 mb-md-0"  [routerLink]="['/home']">
+    <img src="assets/logo.png" width="114" height="64" alt="Logo Rick and Morty" />
   </div>
-  <ul class="translate">
+  <ul class="translate d-flex justify-content-center mb-3 mb-md-0">
     <li
       class="item"
       [class.focus]="isLangSelected('pt_br')"
@@ -23,12 +23,12 @@
     </li>
   </ul>
 
-  <div class="header-options d-flex">
-    <div class="option d-flex align-items-center no-border-home" [routerLink]="['/home']"  [routerLinkActive]="['active']" >
+  <div class="header-options d-flex justify-content-center justify-content-md-end">
+    <div class="option d-flex align-items-center no-border-home" [routerLink]="['/home']" [routerLinkActive]="['active']">
       <i class="bi bi-house"></i>
       <span class="option-title">{{'HOME.TITLE' | translate}}</span>
     </div>
-    <div class="option d-flex align-items-center no-border-favorites" [routerLink]="['/favorites']"  [routerLinkActive]="['active']">
+    <div class="option d-flex align-items-center no-border-favorites" [routerLink]="['/favorites']" [routerLinkActive]="['active']">
       <i class="bi bi-heart"></i>
       <span class="option-title">{{'FAVORITE.TITLE' | translate}}</span>
       <ng-container *ngIf="(favoriteCount$ | async) !== null">

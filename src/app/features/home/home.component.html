@@ -1,10 +1,10 @@
-<div class="d-flex justify-content-between align-items-center mb-4">
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
   <h1 class="section-title">{{'SECTION.TITLE' | translate }}</h1>
-  <div class="floating-label" style="margin-top: 20px">
+  <div class="floating-label mt-3 mt-md-0">
     <input type="text" class="floating-input" id="searchInput" placeholder="" [formControl]="searchControl">
     <label>{{'SECTION.PESQUISAR' | translate }}</label>
     <span class="highlight"></span>
-</div>
+  </div>
 </div>
 
 <div *ngIf="characters.length === 0" class="no-items text-center p-5">
@@ -15,17 +15,16 @@
 </div>
 
 <div class="row" infiniteScroll (scrolled)="loadMoreCharacters()">
-  <div *ngFor="let character of characters" class="col-md-4 mb-4">
+  <div *ngFor="let character of characters" class="col-12 col-sm-6 col-md-4 mb-4">
     <div class="card">
       <img [src]="character.image" class="card-img-top" [alt]="character.name">
       <div class="card-body">
         <h5 class="card-title">{{ character.name }}</h5>
         <p class="card-subtitle">{{ character.species }}</p>
         <i class="favorite-icon"
-        [ngClass]="{'bi-heart-fill': isFavorited(character.id), 'bi-heart': !isFavorited(character.id)}"
-        (click)="toggleFavorite(character)">
-     </i>
-
+           [ngClass]="{'bi-heart-fill': isFavorited(character.id), 'bi-heart': !isFavorited(character.id)}"
+           (click)="toggleFavorite(character)">
+        </i>
       </div>
     </div>
   </div>
