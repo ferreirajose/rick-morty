@@ -11,12 +11,11 @@
         </div>
       </section>
       <div id="wrapper-install" *ngIf="modalPwaPlatform === 'ANDROID'" role="button" aria-label="Baixar APP" (click)="addToHomeScreen()">
-        <span>Baixar APP</span>
+        <span>{{'PWA.APP' | translate}}</span>
       </div>
     </div>
     <section id="add-ios" *ngIf="modalPwaPlatform === 'IOS'">
-      <p>Para instalar este aplicativo WEB em seu dispositivo, toque no botão "Menu"
-        e depois no botão "Adicionar à tela inicial"</p>
+      <p>{{'PWA.TEXT' | translate}}</p>
       <div class="text-center">
         <img width="40" src="assets/images/safari_action_button_38x50.png" class="ios-menu" alt="Menu do Safari" />
       </div>
