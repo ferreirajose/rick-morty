@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
-import { IonicModule, Platform } from '@ionic/angular';
 import { of } from 'rxjs';
 import { AddHomeScreenComponent } from './add-home-screen.component';
 import { CommonModule } from '@angular/common';
@@ -9,7 +8,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 describe('AddHomeScreenComponent', () => {
   let component: AddHomeScreenComponent;
   let fixture: ComponentFixture<AddHomeScreenComponent>;
-  let mockPlatform: Platform;
+  let mockPlatform: any;
   let mockSwUpdate: SwUpdate;
 
   beforeEach(async () => {
@@ -30,10 +29,9 @@ describe('AddHomeScreenComponent', () => {
       declarations: [AddHomeScreenComponent],
       imports:[
         CommonModule,
-        IonicModule
       ],
       providers: [
-        { provide: Platform, useValue: mockPlatform },
+        { provide: '', useValue: mockPlatform },
         { provide: SwUpdate, useValue: mockSwUpdate }
       ],
       schemas:[CUSTOM_ELEMENTS_SCHEMA],

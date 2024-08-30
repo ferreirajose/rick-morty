@@ -18,5 +18,9 @@
     "PESQUISAR": "Research",
     "TITLE": "Home",
     "BUTTONVOLTAR": "Back to top"
+  },
+  "PWA": {
+    "TEXT": "To install this WEB application on your device, tap on the 'Menu' button and then on the 'Add to Home Screen' button",
+    "APP": "Download APP"
   }
 }

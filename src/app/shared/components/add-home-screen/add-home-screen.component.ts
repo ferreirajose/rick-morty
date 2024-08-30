@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
+import { TranslateService } from '@ngx-translate/core';
 import { filter, map } from 'rxjs';
 
 @Component({
@@ -14,7 +15,10 @@ export class AddHomeScreenComponent implements OnInit {
   modalPwaEvent: any;
   modalPwaPlatform: string | undefined;
 
-  constructor(private swUpdate: SwUpdate) {
+  constructor(
+    private swUpdate: SwUpdate,
+    public translate: TranslateService
+  ) {
     this.isOnline = false;
     this.modalVersion = false;
   }

@@ -18,5 +18,9 @@
     "PESQUISAR": "Pesquisar",
     "TITLE": "Início",
     "BUTTONVOLTAR": "Voltar ao início"
+  },
+  "PWA": {
+    "TEXT": "Para instalar este aplicativo WEB em seu dispositivo, toque no botão 'Menu' e depois no botão 'Adicionar à tela inicial",
+    "APP": "Baixar APP"
   }
 }
