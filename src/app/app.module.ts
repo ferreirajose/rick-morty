@@ -17,6 +17,7 @@ import { SharedModule } from '@shared/shared.module';
 import { HttpClient } from '@angular/common/http';
 import { PageNotFoundComponent } from '@shared/components/page-not-found/page-not-found.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { AddHomeScreenComponent } from '@shared/components/add-home-screen/add-home-screen.component';
 
 registerLocaleData(localePt);
 
@@ -27,7 +28,8 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AddHomeScreenComponent
   ],
   imports: [
     BrowserModule,
