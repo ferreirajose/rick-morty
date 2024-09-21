@@ -5,6 +5,7 @@ import { FavoriteService } from '../favorites/favorites.service';
 import { Character } from '@shared/types/character';
 import { HomeService } from './home.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Result } from '@shared/types/all-character';
 
 @Component({
   selector: 'app-home',
@@ -39,6 +40,10 @@ export class HomeComponent implements OnInit {
     this.characterService.loadMoreCharacters().subscribe(response => {
       this.characters = [...this.characters, ...response.results];
     });
+  }
+
+  trackByFn(_: number, item: Result): number {
+    return item.id;
   }
 
   toggleFavorite(character: Character): void {

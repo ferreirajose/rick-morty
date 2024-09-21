@@ -15,7 +15,7 @@
 </div>
 
 <div class="row" infiniteScroll (scrolled)="loadMoreCharacters()">
-  <div *ngFor="let character of characters" class="col-12 col-sm-6 col-md-4 mb-4">
+  <div *ngFor="let character of characters; trackBy: trackByFn" class="col-12 col-sm-6 col-md-4 mb-4">
     <div class="card">
       <img [src]="character.image" class="card-img-top" [alt]="character.name">
       <div class="card-body">

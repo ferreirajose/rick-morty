@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FavoriteService } from './favorites.service';
 import { Character } from '@shared/types/character';
 import { TranslateService } from '@ngx-translate/core';
+import { Result } from '@shared/types/all-character';
 
 @Component({
   selector: 'app-favorites',
@@ -31,6 +32,10 @@ export class FavoritesComponent implements OnInit {
         });
       });
     }
+  }
+
+  trackByFn(_: number, item: Result): number {
+    return item.id;
   }
 
   toggleFavorite(character: Character): void {
