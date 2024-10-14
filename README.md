@@ -57,6 +57,9 @@
       ng build --prod
       ```
 
+  4. **Demo:**
+    [Link](https://rick-morty-pied-seven.vercel.app/home)
+
   ## Problems with installing dependencies
 
     try downloading using the command below
